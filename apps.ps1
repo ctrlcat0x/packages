@@ -9,7 +9,6 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 $apps = @(
     "VideoLAN.VLC",
     "qBittorrent.qBittorrent",
-    "FxSound.FxSound",
     "Greenshot.Greenshot",
     "Zen-Team.Zen-Browser",
     "Google.Chrome"
