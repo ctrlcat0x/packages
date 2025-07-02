@@ -21,8 +21,8 @@ $apps = @(
     "Microsoft.VCRedist.2015+.x86",
     "Microsoft.VCRedist.2015+.x64",
     "Microsoft.DirectX",
-    "EpicGames.EpicGamesLauncher",
     "Valve.Steam",
+    "th-ch.YouTubeMusic",
     "Discord.Discord"
 )
 
@@ -53,21 +53,6 @@ if ($hydraAsset -and $hydraAsset.browser_download_url) {
 } else {
     Write-Warning "Could not find the latest Hydra Launcher setup.exe in the release assets."
 }
-
-# Install Spotify using SpotX
-Write-Host "Installing Spotify using SpotX..."
-Invoke-Expression "& { $(Invoke-WebRequest -useb 'https://raw.githubusercontent.com/SpotX-Official/spotx-official.github.io/main/run.ps1') } -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -block_update_on -new_theme -adsections_off"
-
-# Install Spicetify using remote script
-Write-Host "Installing Spicetify using remote script..."
-$spicetifyScriptUrl = "https://raw.githubusercontent.com/ctrlcat0x/packages/master/assets/spicetify_install.ps1"
-Invoke-WebRequest $spicetifyScriptUrl -UseBasicParsing | Invoke-Expression
-
-# Download sample Spicetify config to Downloads folder
-$spicetifyConfigUrl = "https://raw.githubusercontent.com/ctrlcat0x/packages/master/assets/spicetify_config.txt"
-$spicetifyConfigDest = "$env:USERPROFILE\Downloads\spicetify_config.txt"
-Invoke-WebRequest -Uri $spicetifyConfigUrl -OutFile $spicetifyConfigDest
-Write-Host "Sample Spicetify config downloaded to $spicetifyConfigDest."
 
 # Download and install Vencord for Discord
 $vencordUrl = "https://github.com/Vencord/Installer/releases/latest/download/VencordInstaller.exe"
@@ -100,6 +85,5 @@ Write-Host "================================================"
 Write-Host "Gaming essentials installed successfully!"
 Write-Host "Please setup the following manually:"
 Write-Host "1. Hydra Launcher from the Downloads folder"
-Write-Host "2. Spotify (spicetify) using sample config in Downloads folder"
-Write-Host "3. Discord (vencord) using sample config in Downloads folder"
+Write-Host "2. Discord (vencord) using sample config in Downloads folder"
 Write-Host "================================================"

@@ -12,7 +12,7 @@ $apps = @(
     "7zip.7zip",
     "Anysphere.Cursor",
     "Microsoft.VisualStudioCode",
-    "Python.Python.3",
+    "Python.Python.3.11",
     "GitHub.cli",
     "Microsoft.WindowsTerminal"
 )
